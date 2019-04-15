@@ -29,9 +29,9 @@ const path = {
     fontAwesome: "dist/fonts/font-awesome"
 	}
 }
-const bootstrap = path.root + "node_modules/bootstrap/dist/js/bootstrap.js";
-const popper = path.root + "node_modules/popper.js/dist/umd/popper.js";
-const jquery = path.root + "node_modules/jquery/dist/jquery.js";
+// const bootstrap = path.root + "node_modules/bootstrap/dist/js/bootstrap.js";
+// const popper = path.root + "node_modules/popper.js/dist/umd/popper.js";
+// const jquery = path.root + "node_modules/jquery/dist/jquery.js";
 const fontAwesome = path.root + "node_modules/font-awesome/fonts/*";
 
 // reload browser starta o browser
@@ -74,11 +74,11 @@ function js() {
   .pipe(gulp.dest(path.dist.js))
   .pipe(browserSync.reload({stream: true}));
 }
-function vendorJs() {
-  // copy js from vendors
-  return gulp.src([bootstrap, popper, jquery])
-    .pipe(gulp.dest(path.dist.js));
-}
+// function vendorJs() {
+//   // copy js from vendors
+//   return gulp.src([bootstrap, popper, jquery])
+//     .pipe(gulp.dest(path.dist.js));
+// }
 function fonts(callback) {
   // copy font files
   gulp.src(fontAwesome).pipe(gulp.dest(path.dist.fontAwesome));
@@ -91,7 +91,7 @@ function samples() {
   return gulp.src(path.src.samples)
   .pipe(gulp.dest(path.dist.samples));
 }
-const buildJs = gulp.parallel(js, vendorJs);
+const buildJs = gulp.parallel(js/*, vendorJs*/);
 const build =gulp.series(clear, gulp.parallel(html,css,buildJs, fonts, samples));
 function watch() {
   gulp.watch(path.src.templates, html);
