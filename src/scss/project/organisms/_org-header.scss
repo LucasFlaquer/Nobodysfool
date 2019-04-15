@@ -1,0 +1,14 @@
+.header {
+	padding: 15px;
+	position: fixed;
+	top:0;
+	left: 0;
+	width:100%;
+
+	&--top-bar {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		background-color: $dark;
+	}
+}
