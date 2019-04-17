@@ -7,27 +7,69 @@
 	left: 0;
 	z-index: 1;
 	width: 100%;
-	padding: 15px;
+	padding: 20px;
 	background-color: $dark;
 
 	&--social {
-		a {
-			height: 32px;
-			width: 32px;
-			display: inline-block;
-			padding: 5px;
-			text-align: center;
-			vertical-align: middle;
-			border-radius: 15px;
-			background-color: #ddd;
+		li {
+			&:not(:last-child) {
+				margin-right: 10px;
+			}
+			a {
+				height: 32px;
+				width: 32px;
+				display: inline-block;
+				padding: 5px;
+				text-align: center;
+				vertical-align: middle;
+				border-radius: 15px;
+				background-color: $gray;
 
-			&:hover {
-				background-color: $dark-red; 
+				&:hover {
+					background-color: $dark-red; 
+				}
+				.fa {
+					font-size: 22px;
+					color: $white;
+				}
 			}
-			.fa {
-				font-size: 22px;
-				color: $black;
+		}
+	}
+	&--links {
+		>li {
+			&:not(:last-child) {
+				&:after {
+					content: '';
+					display: inline-block;
+					height: 12px;
+					width: 1px;
+					margin: 0 6px;
+					background-color: $gray;
+				}
 			}
+			a {
+				color: $gray;
+				text-decoration: none;
+			}
+		}
+	}
+	.toggle {
+		position: absolute;
+		right: 20px;
+		bottom: -30px;
+		background-color: $dark;
+		height: 30px;
+		width: 30px;
+		border-radius: 0 0 5px 5px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+
+		span {
+			height: 1px;
+			width: 11px;
+			background-color: $white; 
+			display: block; 
 		}
 	}
 }
