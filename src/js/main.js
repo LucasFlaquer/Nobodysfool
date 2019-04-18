@@ -19,8 +19,10 @@ function toggleTopBar() {
 		topBar.classList.toggle("open");
 		if (topBar.classList.contains('open')) {
 			hbody += topBar.offsetHeight;
+			header.style.top = `${topBar.offsetHeight}px`;
 		} else {
 			hbody -= topBar.offsetHeight;
+			header.style.top = 0;
 		}
 		body.style.paddingTop = `${hbody}px`;
 	});
